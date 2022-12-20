@@ -1,0 +1,11 @@
+.barrato{
+    text-decoration: line-through;
+}
+
+
+.fa-check{
+    opacity: 0;
+}
+.active{
+    opacity: 1;
+}

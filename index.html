@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <form @submit.prevent="aggiungiVal">
+                <input v-model="inputVal" class="input_val"></input>
+                <button class="aggiungi" type="submit">aggiungi</button>
+            </form>  
+            <div>
+                <ul>
+                    <li v-for="(voce, index) in lista">
+                        <button class="voce" @click="fatto(voce)"  v-bind:class="{barrato: voce.completato}">
+                            <i class="fa fa-check" v-bind:class="{active: voce.completato}"></i> {{ voce.item }}
+                        </button>
+        
+                        <button class="cancella" @click="lista.splice(index,1)"><i class="fa fa-trash"></i></button>
+                    </li>
+                    
+                </ul>
+            </div>  
+        </div>
+    </div>
+    <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+    <script src="./script.js"></script>
+</body>
+</html>
