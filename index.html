@@ -19,11 +19,11 @@ integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+
             </form>  
             <div>
                 <ul>
-                    <li v-for="(voce, index) in lista">
-                        <button class="voce" @click="fatto(voce)"  v-bind:class="{barrato: voce.completato}">
-                            <i class="fa fa-check" v-bind:class="{active: voce.completato}"></i> {{ voce.item }}
+                    <li v-for="(voce,nome) in lista">
+                        <button class="voce" @click="fatto(voce)"  v-bind:class="{barrato: voce.completato}">{{ voce.item }} 
+                            {{ voce.nome }}
+                            <i class="fa fa-check" v-bind:class="{active: voce.completato}"></i> 
                         </button>
-        
                         <button class="cancella" @click="lista.splice(index,1)"><i class="fa fa-trash"></i></button>
                     </li>
                     

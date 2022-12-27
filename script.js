@@ -7,7 +7,20 @@ createApp({
         return{
             inputVal: '',
             nuovoId: 0,
-            lista: []
+            lista: [
+                {
+                    nome:'uova',
+                },
+                {
+                    nome:'vino',
+                },
+                {
+                    nome:'olio',
+                },
+                {
+                    nome:'sale',
+                },
+            ]
         }    
     },
     methods: {
@@ -16,18 +29,20 @@ createApp({
                 this.lista.push({
                     id: this.nuovoId++,
                     item: this.inputVal,
-                    completato: false
                 });
             };
             this.inputVal = ''
         },
         fatto: function(voce) {
-            if(voce.completato === false){
-                voce.completato = true
+            if(voce.completato){
+                voce.completato = false
             }
             else{
-                voce.completato = false
+                voce.completato = true
             }    
+        },
+        checkTask(index) {
+        let task =this.lista[index];
         }
     }
 }).mount('#app')
